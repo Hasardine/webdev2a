@@ -1,0 +1,13 @@
+<mat-accordion multi='true' *ngIf="exercises.length > 0">
+  <mat-expansion-panel *ngFor="let exercise of exercises">
+    <mat-expansion-panel-header>
+      {{ exercise.title }}
+    </mat-expansion-panel-header>
+    <p>{{ exercise.content }}</p>
+    <mat-action-row>
+      <button mat-button color="primary">Edit</button>
+      <button mat-button color="warn">Delete</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="exercises.length <= 0">No exercise added yet ! </p>

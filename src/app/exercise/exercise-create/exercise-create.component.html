@@ -1,0 +1,31 @@
+<mat-card>
+<form (submit)="onAddExercise(exerciseForm)" #exerciseForm="ngForm">
+    <mat-form-field>
+        <input
+        matInput
+        type="text"
+        name="title"
+        ngModel
+        required
+        placeholder="Title"
+        #title="ngModel">
+        <mat-error *ngIf="title.invalid">Please enter a exercise title.</mat-error>
+      </mat-form-field>
+        <mat-form-field>
+            <textarea
+            matInput
+            rows="4"
+            name="content"
+            ngModel
+            required
+            placeholder="Exercise Content"
+            #content="ngModel"></textarea>
+          <mat-error *ngIf="content.invalid">Please enter a exercise content.</mat-error>
+        </mat-form-field>
+        <button
+        mat-raised-button
+        color = "accent"
+        type="submit">Save Exercise</button>
+</form>
+</mat-card>
+
