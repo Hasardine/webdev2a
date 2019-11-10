@@ -9,13 +9,13 @@ const app = express();
 
 const MongoClient = require('mongodb').MongoClient;
 
-
-mongoose.connect("mongodb+srv://ben:<keepcool>@cluster0-pjl0b.mongodb.net/node-angular?retryWrites=true&w=majority", { useNewUrlParser: true })
+'mongodb+srv://user1:1234@cluster0-g03ww.mongodb.net/assignment1?retryWrites=true&w=majority'
+mongoose.connect("mongodb+srv://ben:keepcool@cluster0-pjl0b.mongodb.net/node-angular?retryWrites=true&w=majority", { useNewUrlParser: true })
   .then(() => {
     console.log('connected database');
   })
-  .catch(() => {
-    console.log('connection failed!');
+  .catch((err) => {
+    console.log('connection failed! ' + JSON.stringify(err));
   });
 
 
