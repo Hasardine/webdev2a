@@ -10,7 +10,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 
 'mongodb+srv://user1:1234@cluster0-g03ww.mongodb.net/assignment1?retryWrites=true&w=majority'
-mongoose.connect("mongodb+srv://ben:keepcool@cluster0-pjl0b.mongodb.net/node-angular?retryWrites=true&w=majority", { useNewUrlParser: true })
+mongoose.connect("mongodb+srv://ben:keepcool@cluster0-pjl0b.mongodb.net/node-angular?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true  })
   .then(() => {
     console.log('connected database');
   })
