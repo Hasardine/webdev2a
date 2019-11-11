@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
-import { ExercisesService } from '../exercises.service';
+import { ExercisesService } from '../../services/exercises.service';
 
 @Component({
   selector: 'app-exercise-create',

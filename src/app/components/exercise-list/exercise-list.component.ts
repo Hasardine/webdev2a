@@ -5,8 +5,8 @@ import { Component,
 
 import { Subscription } from 'rxjs';
 
-import { Exercise } from '../exercise.model';
-import { ExercisesService } from '../exercises.service';
+import { Exercise } from '../../models/exercise.model';
+import { ExercisesService } from '../../services/exercises.service';
 
 @Component ({
   selector: 'app-exercise-list',
@@ -36,7 +36,4 @@ private exercisesSub: Subscription;
   ngOnDestroy() {
     this.exercisesSub.unsubscribe();
   }
-
-
-
 }

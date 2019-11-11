@@ -1,8 +1,15 @@
 
 <app-header></app-header>
+<h1>HIIII</h1>
+<nav>
+  <a routerLink="/" routerLinkActive="active">Exercises</a>
+  <a routerLink="/login" routerLinkActive="active">Login</a>
+  <a routerLink="/register" routerLinkActive="active">Register</a>
+</nav>
 <main>
     <h1>Assignment 2</h1>
     <app-exercise-create></app-exercise-create>
     <app-exercise-list></app-exercise-list>
+    <router-outlet></router-outlet>
 </main>
 

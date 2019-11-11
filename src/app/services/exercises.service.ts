@@ -1,4 +1,4 @@
-import { Exercise } from './exercise.model';
+import { Exercise } from '../models/exercise.model';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';

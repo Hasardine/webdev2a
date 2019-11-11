@@ -13,17 +13,25 @@ import { MatInputModule,
   MatButtonModule,
   MatExpansionModule } from '@angular/material';
 
-import {ExerciseCreateComponent} from './exercise/exercise-create/exercise-create.component';
+import {ExerciseCreateComponent} from './components/exercise-create/exercise-create.component';
 import { HeaderComponent } from './header/header.component';
-import { ExerciseListComponent } from './exercise/exercise-list/exercise-list.component';
+import { ExerciseListComponent } from './components/exercise-list/exercise-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ExerciseComponent } from './components/exercise/exercise.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExerciseCreateComponent,
     HeaderComponent,
-    ExerciseListComponent
+    ExerciseListComponent,
+    ExerciseComponent,
+    LoginComponent,
+    RegisterComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
