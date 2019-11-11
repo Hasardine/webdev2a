@@ -3,10 +3,13 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
+import exerciseList from '../helpers/exercises';
+
 @Injectable({providedIn: 'root'})
 export class ExercisesService {
   private exercises: Exercise[] = [];
   private exercisesUpdated = new Subject<Exercise[]>();
+  private allExercises: Exercise[] = exerciseList;
 
   constructor(private http: HttpClient) {}
 
@@ -23,8 +26,10 @@ export class ExercisesService {
     return this.exercisesUpdated.asObservable();
   }
 
-  addExercise(title: string, content: string) {
-    const exercise: Exercise = {id: null, title, content};
+  addExercise(name: string) {
+    const exercise: Exercise = this.allExercises.filter(ex => ex.name === name)[0];
+    exercise._id = null;
+    exercise.numDone = 0;
     this.http.post<{message: string}>('http://localhost:3000/api/exercises', exercise)
     .subscribe((responseData) => {
       console.log(responseData.message);

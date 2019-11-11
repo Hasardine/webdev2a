@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-
 import { NgForm } from '@angular/forms';
+
 import { ExercisesService } from '../../services/exercises.service';
+import exerciseList from '../../helpers/exercises';
 
 @Component({
   selector: 'app-exercise-create',
@@ -9,8 +10,8 @@ import { ExercisesService } from '../../services/exercises.service';
   styleUrls: ['./exercise-create.component.css']
 })
 export class ExerciseCreateComponent {
-  enteredTitle = '';
-  enteredContent = '';
+  allExercises = exerciseList;
+  selectedExercise = '';
 
   constructor(public exercisesService: ExercisesService) {}
 
@@ -18,11 +19,11 @@ export class ExerciseCreateComponent {
     // alert('Exercise Added');
     // console.dir(exerciseInput);
     // this.newExercise = this.enteredValue;
-    if (form.invalid) {
-      return;
-    }
+    // if (form.invalid) {
+    //   return;
+    // }
 
-    this.exercisesService.addExercise(form.value.title, form.value.content);
+    this.exercisesService.addExercise(this.selectedExercise);
     form.resetForm();
   }
 

@@ -1,6 +1,8 @@
 export interface Exercise {
-id: string;
-title: string;
-content: string;
-
+  _id: string;
+  name: string;
+  description: string;
+  numSets: number;
+  numReps: number;
+  numDone: number;
 }
