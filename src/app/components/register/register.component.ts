@@ -12,4 +12,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  register(form: NgForm) {
+
+    if (form.invalid) {
+      return;
+    }
+  }
+
 }
