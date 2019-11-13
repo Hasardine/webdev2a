@@ -1,28 +1,50 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
 import { ExercisesService } from '../exercises.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Exercise } from '../exercise.model';
 
 @Component({
   selector: 'app-exercise-create',
   templateUrl: './exercise-create.component.html',
   styleUrls: ['./exercise-create.component.css']
 })
-export class ExerciseCreateComponent {
+export class ExerciseCreateComponent implements OnInit {
   enteredTitle = '';
   enteredContent = '';
+  private mode = 'create';
+  private exerciseId: string;
+  exercise: Exercise;
 
-  constructor(public exercisesService: ExercisesService) {}
+  constructor(public exercisesService: ExercisesService, public route: ActivatedRoute) {}
 
-  onAddExercise(form: NgForm) {
-    // alert('Exercise Added');
-    // console.dir(exerciseInput);
-    // this.newExercise = this.enteredValue;
+  ngOnInit() {
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      if (paramMap.has('exerciseId')) {
+        this.mode = 'edit';
+        this.exerciseId = paramMap.get('exerciseId');
+        this.exercise = this.exercisesService.getExercise(this.exerciseId);
+      } else {
+        this.mode = 'create';
+        this.exerciseId = null;
+      }
+    });
+  }
+
+  onSaveExercise(form: NgForm) {
     if (form.invalid) {
       return;
     }
-
-    this.exercisesService.addExercise(form.value.title, form.value.content);
+    if (this.mode === 'create') {
+      this.exercisesService.addExercise(form.value.title, form.value.content);
+    } else {
+      this.exercisesService.updateExercise(
+        this.exerciseId,
+        form.value.title,
+        form.value.content
+        );
+    }
     form.resetForm();
   }
 

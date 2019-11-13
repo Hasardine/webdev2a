@@ -33,6 +33,11 @@ private exercisesSub: Subscription;
       });
   }
 
+  onDelete(exerciseId: string) {
+    this.exercisesService.deleteExercise(exerciseId);
+  }
+
+
   ngOnDestroy() {
     this.exercisesSub.unsubscribe();
   }

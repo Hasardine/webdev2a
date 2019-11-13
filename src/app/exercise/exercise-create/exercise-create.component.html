@@ -1,11 +1,11 @@
 <mat-card>
-<form (submit)="onAddExercise(exerciseForm)" #exerciseForm="ngForm">
+<form (submit)="onSaveExercise(exerciseForm)" #exerciseForm="ngForm">
     <mat-form-field>
         <input
         matInput
         type="text"
         name="title"
-        ngModel
+        [ngModel]="exercise?.title"
         required
         placeholder="Title"
         #title="ngModel">
@@ -16,7 +16,7 @@
             matInput
             rows="4"
             name="content"
-            ngModel
+            [ngModel]="exercise?.content"
             required
             placeholder="Exercise Content"
             #content="ngModel"></textarea>
