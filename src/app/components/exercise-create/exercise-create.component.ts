@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ExercisesService } from '../exercises.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Exercise } from '../exercise.model';
-import exerciseList from '../../helpers/exercises';
+// import exerciseList from '../../helpers/exercises';
 
 @Component({
   selector: 'app-exercise-create',
@@ -45,7 +45,7 @@ export class ExerciseCreateComponent implements OnInit {
         form.value.content
         );
     }
-  onAddExercise(form: NgForm) {
+ // onAddExercise(form: NgForm) {
     // alert('Exercise Added');
     // console.dir(exerciseInput);
     // this.newExercise = this.enteredValue;
@@ -53,8 +53,9 @@ export class ExerciseCreateComponent implements OnInit {
     //   return;
     // }
 
-    this.exercisesService.addExercise(this.selectedExercise);
-    form.resetForm();
-  }
+ //   this.exercisesService.addExercise(this.selectedExercise);
+ //   form.resetForm();
+//  }
 
+  }
 }
