@@ -1,0 +1,32 @@
+<mat-card>
+  <form (submit)="register(registerForm)" #registerForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="username"
+        ngModel
+        required
+        placeholder="Username"
+        #title="ngModel">
+      <mat-error *ngIf="username.invalid">Please enter username.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="password"
+        ngModel
+        required
+        placeholder="Password"
+        #password="ngModel">
+      <mat-error *ngIf="content.invalid">Please enter password.</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color = "accent"
+      type="submit">Register
+    </button>
+  </form>
+</mat-card>
+

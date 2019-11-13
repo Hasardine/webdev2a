@@ -1,0 +1,27 @@
+<mat-card>
+<form (submit)="onAddExercise(exerciseForm)" #exerciseForm="ngForm">
+  <mat-form-field>
+      <!-- <input
+      matInput
+      type="text"
+      name="title"
+      ngModel
+      required
+      placeholder="Title"
+      #title="ngModel">
+      <mat-error *ngIf="title.invalid">Please enter a exercise title.</mat-error> -->
+    <mat-select>
+      <mat-option **ngFor="let item of allExercises", [(selectedExercise)]='item.name'>
+        {{ item.name }}
+      </mat-option>
+    </mat-select>
+    <button
+      mat-raised-button
+      color = "accent"
+      type="submit">
+      ADD Exercise
+    </button>
+  </mat-form-field>
+</form>
+</mat-card>
+

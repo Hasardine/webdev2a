@@ -1,4 +1,4 @@
-import { Exercise } from './exercise.model';
+import { Exercise } from '../models/exercise.model';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -6,10 +6,13 @@ import { map } from 'rxjs/operators';
 import { post } from 'selenium-webdriver/http';
 
 
+import exerciseList from '../helpers/exercises';
+
 @Injectable({providedIn: 'root'})
 export class ExercisesService {
   private exercises: Exercise[] = [];
   private exercisesUpdated = new Subject<Exercise[]>();
+  private allExercises: Exercise[] = exerciseList;
 
   constructor(private http: HttpClient) {}
 
@@ -47,6 +50,15 @@ export class ExercisesService {
     .subscribe(responseData => {
       const id = responseData.exerciseId;
       exercise.id = id;
+
+ // addExercise(name: string) {
+ //   const exercise: Exercise = this.allExercises.filter(ex => ex.name === name)[0];
+ //   exercise._id = null;
+  //  exercise.numDone = 0;
+  //  this.http.post<{message: string}>('http://localhost:3000/api/exercises', exercise)
+  // .subscribe((responseData) => {
+  //    console.log(responseData.message);
+
       this.exercises.push(exercise);
       this.exercisesUpdated.next([...this.exercises]);
     });

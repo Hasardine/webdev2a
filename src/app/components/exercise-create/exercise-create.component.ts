@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { NgForm } from '@angular/forms';
 import { ExercisesService } from '../exercises.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Exercise } from '../exercise.model';
+import exerciseList from '../../helpers/exercises';
 
 @Component({
   selector: 'app-exercise-create',
@@ -45,6 +45,15 @@ export class ExerciseCreateComponent implements OnInit {
         form.value.content
         );
     }
+  onAddExercise(form: NgForm) {
+    // alert('Exercise Added');
+    // console.dir(exerciseInput);
+    // this.newExercise = this.enteredValue;
+    // if (form.invalid) {
+    //   return;
+    // }
+
+    this.exercisesService.addExercise(this.selectedExercise);
     form.resetForm();
   }
 
