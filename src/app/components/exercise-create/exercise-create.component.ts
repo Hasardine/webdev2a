@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ExercisesService } from '../exercises.service';
+import { ExercisesService } from '../../services/exercises.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Exercise } from '../exercise.model';
+import { Exercise } from '../../models/exercise.model';
 // import exerciseList from '../../helpers/exercises';
 
-@Component({
+@Component ({
   selector: 'app-exercise-create',
   templateUrl: './exercise-create.component.html',
   styleUrls: ['./exercise-create.component.css']

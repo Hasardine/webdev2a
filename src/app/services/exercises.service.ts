@@ -23,7 +23,7 @@ export class ExercisesService {
         return {
           title: exercise.title,
           content: exercise.content,
-          id: exercise._id
+          id: exercise.id
         };
       });
     }))

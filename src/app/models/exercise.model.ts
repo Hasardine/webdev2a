@@ -1,8 +1,7 @@
+import { Content } from '@angular/compiler/src/render3/r3_ast';
+
 export interface Exercise {
-  _id: string;
-  name: string;
-  description: string;
-  numSets: number;
-  numReps: number;
-  numDone: number;
+  id: string;
+  title: string;
+  content: string;
 }

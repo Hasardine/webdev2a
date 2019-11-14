@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { ExerciseListComponent } from './exercise/exercise-list/exercise-list.component';
-import { ExerciseCreateComponent } from './exercise/exercise-create/exercise-create.component';
+import { ExerciseListComponent } from './components/exercise-list/exercise-list.component';
+import { ExerciseCreateComponent } from './components/exercise-create/exercise-create.component';
 
 import { ExerciseComponent } from './components/exercise/exercise.component';
 import { LoginComponent } from './components/login/login.component';
