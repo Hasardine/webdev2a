@@ -4,8 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-To run the server in a terminal to open angular : ng serve -- open                                                                                       
-
+To run the server in a terminal to open angular : ng serve -- open 
 To run the backend (in an other terminal) : npm run start:server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
